@@ -1,0 +1,20 @@
+<p> Welcome, </p> <hr>
+
+<p> 
+  Langapp is the most straightforward way to revise the 350 most common English words. <br>
+  You can use it on your desktop and on your phone when you're on the go. Enjoy.
+</p> <hr>
+
+<h4> Login </h4>
+<%= form_for :login, url: login_path do |f| %>
+  <%= f.text_field :email, placeholder: "email" %> <br>
+  <%= f.text_field :password, placeholder: "password" %> <br>
+  <%= f.submit "login" %>
+<% end %> 
+
+<h4> Create Account </h4>
+<%= form_for :new_user, url: new_user_path do |f| %>
+  <%= f.text_field :email, placeholder: "email" %> <br>
+  <%= f.text_field :password, placeholder: "password" %> <br>
+  <%= f.submit "create account" %>
+<% end %> 

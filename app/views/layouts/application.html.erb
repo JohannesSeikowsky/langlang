@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Langapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= notice %> <br>
+<%= yield %>
+
+</body>
+</html>
+
+
+<!-- 
+  fastest way to V1:
+  - 1. password saving functionality
+  - 2. find 350 most common words and seed them to db
+  - 3. Hack basic layout of learning page and add the relevant buttons with their functionality
+  - 4. deploy
+-->
