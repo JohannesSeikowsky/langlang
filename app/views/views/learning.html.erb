@@ -1,3 +1,14 @@
-<div> <%= link_to "Logout", logout_path, method: :delete %> </div>
+<div> <%= link_to "Logout", logout_path, method: :delete %> </div> <br>
 
-<p> ... </p>
+<p> <%= @word.english %> </p>
+<p> <%= @word.german %> </p>
+
+
+<div> <%= link_to "sure", learning_path %> </div> <br>
+<div> <%= link_to "unsure", learning_path %> </div> <br>
+<a onclick="reveal()"> show </a>
+
+
+
+<script type="text/javascript">
+</script>

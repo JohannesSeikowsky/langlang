@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   end
 
   def check_password(password_provided)
-    # check whether the provided password checks out
     BCrypt::Engine.hash_secret(password_provided, self.password_salt) == self.password
   end
 

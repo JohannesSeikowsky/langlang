@@ -4,6 +4,7 @@ class ViewsController < ApplicationController
   end
 
   def learning
+    @word = Word.get_random
   end
 
 end

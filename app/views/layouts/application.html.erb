@@ -8,24 +8,21 @@
 </head>
 <body>
 
-<%= notice %> <br>
-<%= yield %>
-
+  <%= link_to "Log out", logout_path if logged_in? %> <br>
+  <%= notice %> <br>
+  <%= yield %>
   <%= debug(params) %>
 
 </body>
 </html>
 
-<!-- 
-  fastest way to V1:
-  - 1. find 350 most common words and seed them to db
-  - 2. Hack basic layout of learning page and add the relevant buttons with their functionality
-  - 4. deploy
 
-  - edit
-  - finish a version, then edit
-  - do one syste from ground up once more
-  - thin through components in head. give some though to it.
+<!--
+  - find 350 most common English words and put the in db seed
+  - hack the basics of learning interface.
+  - try some basics with ajax and testing
+  - edit, edit, edit
+  - deploy
+  - readme, thin etc.
+  - think of how expansion of app, baustellen may be accomplished.
 -->
-
-
