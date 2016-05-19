@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def login
     if user_exists_and_checks_out?
-      log_in_then
+      log_in
       root_with_notice('you are logged in')
     else
       root_with_notice('Sorry. you could not be logged in')

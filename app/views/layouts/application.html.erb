@@ -8,17 +8,23 @@
 </head>
 <body>
 
-  <%= link_to "Log out", logout_path if logged_in? %> <br>
-  <%= notice %> <br>
+  <% if logged_in? %>
+    <%= link_to "Log out", logout_path %> <br>
+  <% end %>
+
+  <% if notice %>
+    <%= notice %> <br>
+  <% end %>
+
   <%= yield %>
-  <%= debug(params) %>
+  
+  <%= debug(params) if Rails.env.development? %>
 
 </body>
 </html>
 
 
 <!--
-  - find 350 most common English words and put the in db seed
   - hack the basics of learning interface.
   - try some basics with ajax and testing
   - edit, edit, edit
