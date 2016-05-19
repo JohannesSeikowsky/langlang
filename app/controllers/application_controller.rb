@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
     session[:id] = nil
   end
 
+  def root
+    redirect_to root_path
+  end
+
   def root_with_notice(notice)
     redirect_to root_path, notice: "#{notice}"
   end

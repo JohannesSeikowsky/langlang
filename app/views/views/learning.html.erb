@@ -1,14 +1,51 @@
-<div> <%= link_to "Logout", logout_path, method: :delete %> </div> <br>
 
-<p> <%= @word.english %> </p>
-<p> <%= @word.german %> </p>
+<% if logged_in? %>
+  <%= link_to "Log out", logout_path, class: "pull-right" %> <br>
+<% end %>
+
+<% if notice %>
+  <div class="pull-right"> <%= notice %> </div>
+<% end %>
+
+<div>
+  <br> <br> <br>
+    <h3> 
+      <span id="english"> <%= @word.english %> </span> 
+      <span id="german"> <%= @word.german %> </span> 
+    </h3> <br> <br>
+</div>
 
 
-<div> <%= link_to "sure", learning_path %> </div> <br>
-<div> <%= link_to "unsure", learning_path %> </div> <br>
-<a onclick="reveal()"> show </a>
-
+<div class="btn-group">
+  <a onclick="reveal('german','english');", class="btn btn-md btn-success"> reveal meaning of word </a>
+  <%= link_to "next -->", learning_path, class: "btn btn-md btn-primary" %>  
+  <br> <br> <br>
+  * if you click next without revealing the word, we assume <br> you know the word and it won't crop up again.
+</div>
 
 
 <script type="text/javascript">
+ 
+  function reveal(first, second){
+  
+  x = document.getElementById(first).style;
+  y = document.getElementById(second).style;
+      
+      
+    if(x.display == 'none' || x.display == ''){
+      x.display = 'block';     
+    }else{
+      x.display = 'none';
+    }
+   
+    if(y.display == 'block' || y.display == ''){
+      y.display = 'none';     
+    }else{
+      y.display = 'block';
+    }
+    
+
+  }
+
+
 </script>

@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Langapp</title>
+  <title> ... </title>
+  <!-- boostrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <!-- rails components -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if logged_in? %>
-    <%= link_to "Log out", logout_path %> <br>
-  <% end %>
-
-  <% if notice %>
-    <%= notice %> <br>
-  <% end %>
-
-  <%= yield %>
-  
-  <%= debug(params) if Rails.env.development? %>
+  <div class="col-xs-6 col-xs-offset-3">
+    <%= yield %>
+    <div class="to_bottom">
+      <%= debug(params) if Rails.env.development? %> 
+    </div>
+  </div>
 
 </body>
 </html>
 
+<!-- 
+  - translations
+  - github
+  - heroku
+  - mobile version(basic)
 
-<!--
-  - hack the basics of learning interface.
+
+- hack the basics of learning interface.
   - try some basics with ajax and testing
   - edit, edit, edit
   - deploy
-  - readme, thin etc.
-  - think of how expansion of app, baustellen may be accomplished.
--->
+  - reflect on the possible implementation of expansions. -->
