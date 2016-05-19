@@ -11,8 +11,11 @@
   <span id="german"> <%= @word.german %> </span> 
 </h2>
 
-<div class="btn-group">
+<div class="buttons">
   <%= link_to "reveal meaning of word", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to "next -->", learning_path, class: "btn btn-lg btn-primary" %> <br> <br> <br>
+  <%= link_to "next -->", learning_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<div class="text">
   * if you click next without revealing the word, we assume <br> you know the word and it won't crop up again.
 </div>
