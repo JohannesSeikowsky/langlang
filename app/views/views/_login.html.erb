@@ -1,6 +1,6 @@
 <h5> Login </h5>
 <%= form_for :login, url: login_path do |f| %>
   <%= f.text_field :email, placeholder: "email" %> <br>
-  <%= f.text_field :password_provided, placeholder: "password" %> <br>
+  <%= f.password_field :password_provided, placeholder: "password" %> <br>
   <%= f.submit "login" %>
 <% end %>
