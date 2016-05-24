@@ -3,18 +3,18 @@ class UsersController < ApplicationController
   def login
     if user_exists_and_checks_out?
       log_in
-      learning_with_notice('you are logged in.')
+      learning_with_notice('Logged in.')
     else
-      root_with_notice('Sorry. you could not be logged in.')
+      root_with_notice('Invalid. Try again.')
     end
   end
 
   def new_user
     if new_user_can_saved?
       log_in
-      learning_with_notice('you have signed up.')
+      learning_with_notice('Signed up.')
     else
-      root_with_notice('fail. you have not signed up.')
+      root_with_notice('Invalid. Try again.')
     end
   end
 
