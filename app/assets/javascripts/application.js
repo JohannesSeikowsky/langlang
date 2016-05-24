@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -17,9 +5,10 @@
 
 
 function reveal(ger, eng){
+  // normally applicaiton of block here to avoid repetition, if time, find easiest way to do it in js.
   ger = document.getElementById(ger).style;
   eng = document.getElementById(eng).style;
-      
+  
   if(ger.display == 'none' || ger.display == ''){
     ger.display = 'block';     
   }else{
@@ -32,3 +21,19 @@ function reveal(ger, eng){
     eng.display = 'block';
   }
 }
+
+/* coffee version of function. 
+reveal = (ger, eng) ->
+  # normally applicaiton of block here to avoid repetition, if time, find easiest way to do it in js.
+  ger = document.getElementById(ger).style
+  eng = document.getElementById(eng).style
+  if ger.display == 'none' or ger.display == ''
+    ger.display = 'block'
+  else
+    ger.display = 'none'
+  if eng.display == 'block' or eng.display == ''
+    eng.display = 'none'
+  else
+    eng.display = 'block'
+  return
+*/

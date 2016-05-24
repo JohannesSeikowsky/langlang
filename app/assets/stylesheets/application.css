@@ -1,5 +1,6 @@
 /* *= require_self */
 
+
  body{
   margin-top: 15px;
  }
@@ -12,24 +13,11 @@
   margin-top: 200px; 
 }
 
-.inline{
-  display: inline;
-}
-
-#word{
+.word{
   font-size: 37px;
   text-align: center;
   margin-top: 38px;
   margin-bottom: 35px;
-}
-
-.buttons{
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.text{
-  text-align: center;
 }
 
 #english{
@@ -38,4 +26,13 @@
 
 #german{
   display: none;
+}
+
+.buttons{
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+#text{
+  text-align: center;
 }

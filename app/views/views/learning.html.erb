@@ -1,3 +1,4 @@
+<!-- head links -->
 <% if logged_in? %>
   <%= link_to "Log out", logout_path, class: "pull-right" %> <br>
 <% end %>
@@ -6,7 +7,8 @@
   <div class="pull-right"> <%= notice %> </div>
 <% end %>
 
-<h2 id="word"> 
+<!-- central content -->
+<h2 class="word"> 
   <span id="english"> <%= @word.english %> </span> 
   <span id="german"> <%= @word.german %> </span> 
 </h2>
@@ -16,6 +18,9 @@
   <%= link_to "next -->", learning_path, class: "btn btn-lg btn-primary" %>
 </div>
 
-<div class="text">
+<div id="text">
   * if you click next without revealing the word, we assume <br> you know the word and it won't crop up again.
 </div>
+
+
+<%= session[:words] %>
