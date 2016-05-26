@@ -12,7 +12,7 @@ class ViewsController < ApplicationController
       @word = Word.get_random
       if session[:words].include?(@word.english)
         # only continue if not all Words have been covered in session to avoid infinite loop crash. 
-        if session[:words].count << Word.count
+        if session[:words].count < Word.count
           redirect_to learning_path
         else
           root_with_notice("you have covered all words in this course. thank you.")
