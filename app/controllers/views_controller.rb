@@ -20,7 +20,10 @@ class ViewsController < ApplicationController
       else
         # save word in current session and generate the view.
         session[:words] << @word.english
-        render "learning"     
+        respond_to do |format|
+          format.html { render "learning" }
+          format.js
+        end
       end
 
     else
