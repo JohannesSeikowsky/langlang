@@ -15,11 +15,11 @@
 
 <div class="buttons">
   <%= link_to "vokabel aufdecken", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to "weiter -->", learning_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "weiter -->", learning_path, remote: true, class: "btn btn-lg btn-primary" %>
 </div>
 
 <div id="text">
-  *Vokabeln die vor dem Weitergehen nicht aufgedeckt werden, <br> werden in Zukunft nicht nochmals abgefragt werden.
+  *Vokabeln die Ihnen vor dem Weitergehen nicht aufgedeckt werden, werden <br> als "gewusst" markiert und in der Zukunft nicht nochmals abgefragt.
 </div>
 
 
