@@ -3,6 +3,10 @@ class ViewsController < ApplicationController
   before_action :record_words_in_session, only: [:learning]
 
   def home
+    if logged_in?
+      redirect_to learning_path
+    else
+    end
   end
 
   def learning
