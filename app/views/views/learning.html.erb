@@ -1,4 +1,4 @@
-<!-- head links -->
+<!-- header links -->
 <% if logged_in? %>
   <%= link_to "Log out", logout_path, class: "pull-right" %> <br>
 <% end %>
@@ -13,14 +13,16 @@
   <span id="german"> <%= @word.german %> </span> 
 </h2>
 
+<!-- body of content -->
 <div class="buttons">
   <%= link_to "vokabel aufdecken", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
   <%= link_to "weiter -->", learning_path, remote: true, class: "btn btn-lg btn-primary" %>
 </div>
 
 <div id="text">
-  *Vokabeln die Ihnen vor dem Weitergehen nicht aufgedeckt werden, werden <br> als "gewusst" markiert und in der Zukunft nicht nochmals abgefragt.
+  *Vokabeln die Ihnen vor dem Weitergehen nicht aufgedeckt werden, werden <br> 
+  als "gewusst" markiert und in der Zukunft nicht nochmals abgefragt.
 </div>
 
-
+<!-- in dev -->
 <br> <br> <%= session[:words] if Rails.env.development? %>

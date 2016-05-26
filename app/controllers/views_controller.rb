@@ -25,7 +25,6 @@ class ViewsController < ApplicationController
           format.js
         end
       end
-
     else
       root_with_notice("please log in.")
     end

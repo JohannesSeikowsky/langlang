@@ -8,20 +8,20 @@ class ApplicationController < ActionController::Base
 
   # general functions
   def current_user
-    @current_user ||= User.find(session[:id]) if session[:id]
+    @current_user ||= User.find(cookies[:id]) if cookies[:id]
   end
 
   def logged_in?
-    session[:id]
+    cookies[:id]
   end
 
   # functions for users controller
   def log_in
-    session[:id] = @user.id
+    cookies[:id] = @user.id
   end
 
   def log_out
-    session[:id] = nil
+    cookies.delete(:id)
   end
 
   def root
