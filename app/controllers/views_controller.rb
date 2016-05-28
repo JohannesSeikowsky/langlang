@@ -11,25 +11,25 @@ class ViewsController < ApplicationController
   end
 
   def learning
-    # make sure user is logged in
+
+    current_user.update_attribute(:known_word, params["current_word"])
+    
+    # logged in?
     if current_user
-      # next Word and make sure it hasnt already been asked for in this session  
+      # get word 
       @word = Word.get_random
+      # word already in session?
       if session[:words].include?(@word.english)
-        # only continue if not all Words have been covered in session to avoid infinite loop crash. 
-        if session[:words].count < Word.count
-          redirect_to learning_path
-        else
-          root_with_notice("you have covered all words in this course. thank you.")
-        end
+        redirect_to learning_path
       else
-        # save word in current session and generate the view.
+        # put word in session & continue
         session[:words] << @word.english
         respond_to do |format|
           format.html { render "learning" }
           format.js
         end
       end
+    # if not logged in
     else
       root_with_notice("please log in.")
     end

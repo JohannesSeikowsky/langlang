@@ -16,7 +16,7 @@
 <!-- body of content -->
 <div class="buttons">
   <%= link_to "vokabel aufdecken", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to "weiter -->", learning_path, remote: true, class: "btn btn-lg btn-primary" %>
+  <%= link_to "weiter -->", learning_path(current_word: @word.english), remote: true, class: "btn btn-lg btn-primary" %>
 </div>
 
 <div id="text">
@@ -26,3 +26,7 @@
 
 <!-- in dev -->
 <br> <br> <%= session[:words] if Rails.env.development? %>
+
+<br> <br> last word: <%= @last_word %>
+<br> <br> curr: <%= current_user.known_word %>
+<br> <br> curr: <%= current_user.id %>

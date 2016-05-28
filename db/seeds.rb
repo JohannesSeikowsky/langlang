@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # Word.create!(english: "explain", german: "erklären")
 
+Word.delete_all
+
 vocab_arrow = [["word", "Wort"],
 ["said", "gesagt"],
 ["there", "da"],
