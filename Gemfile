@@ -25,4 +25,3 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
 end
-

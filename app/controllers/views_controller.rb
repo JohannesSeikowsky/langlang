@@ -11,10 +11,6 @@ class ViewsController < ApplicationController
   end
 
   def learning
-
-    current_user.known = [1,2,{foot: 3, bart: "noodles"}]
-    current_user.save
-
     # logged in?
     if current_user
       # get word 
@@ -35,6 +31,7 @@ class ViewsController < ApplicationController
       root_with_notice("please log in.")
     end
   end
+
 
   def record_words_in_session
     session[:words] ||= []

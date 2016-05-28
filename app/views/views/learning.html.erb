@@ -25,8 +25,6 @@
 </div>
 
 <!-- in dev -->
-<br> <br> <%= session[:words] if Rails.env.development? %>
-
-<br> <br> last word: <%= @last_word %>
-<br> <br> curr: <%= current_user.english_knowns %>
-<br> <br> curr: <%= current_user.id %>
+<div>
+  <%= session[:words] if Rails.env.development? %>
+</div>
