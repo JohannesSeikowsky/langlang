@@ -6,6 +6,7 @@ class ViewsController < ApplicationController
     if logged_in?
       redirect_to learning_path
     else
+      render 'home'
     end
   end
 

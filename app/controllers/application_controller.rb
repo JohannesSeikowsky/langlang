@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   # functions for users controller
   def log_in
-    cookies[:id] = { :value => @user.id, :expires => 1.year.from_now }
+    cookies.permanent[:id] = @user.id
   end
 
   def log_out
