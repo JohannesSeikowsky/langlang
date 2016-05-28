@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'thin'
+gem 'web-console', group: :development
 
 
 group :production do
@@ -22,6 +23,6 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+

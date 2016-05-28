@@ -1,12 +1,16 @@
 class User < ActiveRecord::Base
 
+  # serialize trial
+  serialize :english_knowns
+  serialize :known
+
   # validations
   validates_uniqueness_of :email
   validates_presence_of :email, :password_provided
   validates_length_of :email, :password_provided, minimum: 6
 
   # rather than saving the provided password directly in db, we generate a secure password_hash for each user
-  attr_accessor :password_provided
+  attr_accessor :password_provided, :english_knowns
   before_save :password_encrypt
 
   def password_encrypt

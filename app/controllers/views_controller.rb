@@ -12,8 +12,9 @@ class ViewsController < ApplicationController
 
   def learning
 
-    current_user.update_attribute(:known_word, params["current_word"])
-    
+    current_user.known = [1,2,{foot: 3, bart: "noodles"}]
+    current_user.save
+
     # logged in?
     if current_user
       # get word 
