@@ -18,4 +18,4 @@ I plan to cut all fluff in an extremist fashion code-wise and interface-wise.
 + more languages / dynamic language adding
 + basic test suite
 
-p.s. If you happen to be a UI designer who would like to design an insanely minimalistic interface for the app, just drop me a email: seikowsky@googlemail.com
+p.s. If you happen to be a UI designer who would like to design an insanely minimalistic interface for the app, just drop me a email: seikowsky@googlemail.com :)
