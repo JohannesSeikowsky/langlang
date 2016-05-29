@@ -10,18 +10,4 @@ I plan to cut all fluff in an extremist fashion code-wise and interface-wise.
 + no word repetition in session
 + validations
 
-**to be implemented:**
-+ more languages
-+ language swop feature
-+ simple gamificaton feature
-
-**blacklist**
-+ i18n
-+ improving speed, think
-+ use logger
-+ gitlog
-+ run some tests write a test suite
-+ do some clean writing / editing
-
-
 p.s. If you happen to be a UI designer who would like to design a very, very minimalistic and nice interface for the app, just drop me a email: seikowsky@googlemail.com :)

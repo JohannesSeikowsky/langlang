@@ -33,6 +33,11 @@
   margin-bottom: 18px;
 }
 
-#text{
-  text-align: center;
+.locale_links{
+  float: right;
+}
+
+.red{
+  color: red;
+  margin-left: 20px;
 }

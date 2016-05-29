@@ -1,6 +1,6 @@
 <!-- header links -->
 <% if logged_in? %>
-  <%= link_to "Log out", logout_path, class: "pull-right" %> <br>
+  <%= link_to "Ausloggen", logout_path, class: "pull-right" %> <br>
 <% end %>
 
 <% if notice %>
@@ -15,16 +15,6 @@
 
 <!-- body of content -->
 <div class="buttons">
-  <%= link_to "vokabel aufdecken", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to "weiter -->", learning_path(current_word: @word.english), class: "btn btn-lg btn-primary" %>
-</div>
-
-<div id="text">
-  *Vokabeln die Ihnen vor dem Weitergehen nicht aufgedeckt werden, werden <br> 
-  als "gewusst" markiert und in der Zukunft nicht nochmals abgefragt.
-</div>
-
-<!-- in dev -->
-<div>
-  <%= session[:words] if Rails.env.development? %>
+  <%= link_to "t learning.reveal_button", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
+  <%= link_to "t learning.next_button", learning_path(current_word: @word.english), class: "btn btn-lg btn-primary" %>
 </div>

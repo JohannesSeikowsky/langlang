@@ -1,6 +1,6 @@
 <h5> Account erstellen </h5>
 <%= form_for :new_user, url: new_user_path do |f| %>
-  <%= f.text_field :email, placeholder: "email" %> <br>
-  <%= f.password_field :password_provided, placeholder: "password" %> <br>
+  <%= f.text_field :email, placeholder: "Email" %> <br>
+  <%= f.password_field :password_provided, placeholder: "Password" %> <br>
   <%= f.submit "Account erstellen" %>
 <% end %>

@@ -3,7 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # make available in view layer
+  # set the local before each action
+  before_filter :set_locale
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+  # make certain methods available in view layer
   helper_method :current_user, :logged_in?
 
   # general functions
