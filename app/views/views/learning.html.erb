@@ -18,3 +18,5 @@
   <%= link_to I18n.t('learning.reveal_button'), "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
   <%= link_to I18n.t('learning.next_button'), learning_path(current_word: @word.english), class: "btn btn-lg btn-primary" %>
 </div>
+
+<%= session[:count] %>

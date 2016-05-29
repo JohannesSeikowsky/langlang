@@ -21,6 +21,8 @@ class ViewsController < ApplicationController
       else
         # put word in session & continue
         session[:words] << @word.english
+        session[:count] += 1
+
         respond_to do |format|
           format.html { render "learning" }
           format.js
@@ -35,6 +37,7 @@ class ViewsController < ApplicationController
 
   def record_words_in_session
     session[:words] ||= []
+    session[:count] ||= 0
   end
 
 end

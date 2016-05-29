@@ -1,9 +1,9 @@
 en:
   home:
     intro: "To whom it may concern,"
-    description: "yoLang is the easiest way to revise the 500 most common words in popular languages."
-    note: "*designed for desktop and mobile use."
-
+    description: |
+      yoLang is the most straightforward way to revise the 500 most common words of the most commonly used
+      European languages - German, French, Spanisch and Italian. Create an account below to begin.
   learning: 
     reveal_button: "reveal meaning of word"
     next_button: "next -->"
