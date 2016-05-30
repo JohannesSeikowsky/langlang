@@ -35,6 +35,7 @@ class ApplicationController < ActionController::Base
     cookies.delete(:id)
     session[:count] = nil
     session[:words] = nil    
+    session[:reverse_language] = nil
   end
 
   # about the current user
@@ -55,6 +56,12 @@ class ApplicationController < ActionController::Base
   def user_exists_and_checks_out?
     @user = User.find_by_email(params[:login][:email])
     @user && @user.check_password(params[:login][:password_provided])
+  end
+
+  # functionality
+  def reverse_language
+    session[:reverse_language] ^= true 
+    redirect_to learning_path
   end
 
 end

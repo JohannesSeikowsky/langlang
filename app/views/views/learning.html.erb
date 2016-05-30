@@ -1,6 +1,7 @@
-<!-- log out -->
+<!-- header links -->
 <% if logged_in? %>
-  <%= link_to "Log Out", logout_path, class: "pull-right" %> <br>
+  <%= link_to "Language swop", reverse_language_path, remote: true, class: "pull-left" %>
+  <%= link_to "Log Out", logout_path, class: "pull-right" %>
 <% end %>
 
 <!-- notices -->
@@ -11,12 +12,12 @@
 <!-- vocabulary -->
 <h2 class="word"> 
   <span id="gamification"> 0 </span>
-  <span id="english"> <%= @word.english %> </span> 
-  <span id="german"> <%= @word.german %> </span> 
+  <span id="default_show"> <%= @word.english %> </span> 
+  <span id="default_non_show"> <%= @word.german %> </span>
 </h2>
 
 <!-- buttons -->
 <div class="buttons">
-  <%= link_to "reveal meaning of word", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to "next -->", learning_path(current_word: @word.english), remote: true, class: "btn btn-lg btn-primary" %>
+  <%= link_to "reveal meaning of word", "#", onclick: "reveal('default_non_show','default_show');", class: "btn btn-lg btn-success" %>
+  <%= link_to "next -->", learning_path(current_word: @word.english), remote: true, class: "btn btn-lg btn-primary" %> <br> <br>
 </div>

@@ -4,20 +4,20 @@
 //= require_tree .
 
 
-function reveal(ger, eng){
-  // this is damn ugly. find better way if time.
-  ger = document.getElementById(ger).style;
-  eng = document.getElementById(eng).style;
+// ugly!!! improve soon.
+function reveal(default_non_show, default_show){
+  default_non_show = document.getElementById(default_non_show).style;
+  default_show = document.getElementById(default_show).style;
   
-  if(ger.display == 'none' || ger.display == ''){
-    ger.display = 'block';     
+  if(default_non_show.display == 'none' ||default_non_show.display == ''){
+    default_non_show.display = 'block';     
   }else{
-    ger.display = 'none';
+    default_non_show.display = 'none';
   }
  
-  if(eng.display == 'block' || eng.display == ''){
-    eng.display = 'none';     
+  if(default_show.display == 'block' ||default_show.display == ''){
+    default_show.display = 'none';     
   }else{
-    eng.display = 'block';
+    default_show.display = 'block';
   }
 }

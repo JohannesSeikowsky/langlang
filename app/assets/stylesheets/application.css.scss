@@ -17,15 +17,15 @@
 .word{
   font-size: 37px;
   text-align: center;
-  margin-top: 38px;
+  margin-top: 55px;
   margin-bottom: 35px;
 }
 
-#english{
+#default_show{
   display: block;
 }
 
-#german{
+#default_non_show{
   display: none;
 }
 
@@ -47,7 +47,7 @@
   font-size: 15px;
   position: relative;
   left: 153px;
-  bottom: 5px;
+  bottom: 15px;
 }
 
 

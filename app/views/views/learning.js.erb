@@ -1,7 +1,14 @@
-// replace old word with new word && ensure that the english word is at first the visible one.
-$('#english').html("<%= @word.english %>").css("display", "block");
-$('#german').html("<%= @word.german %>").css("display", "none");
+// change old word pair with new one. set css appropriately.
+// replace position of  german and english translation when reverse_language is set to true.
+<% if session[:reverse_language] == true %>
+  $('#default_show').html("<%= @word.german %>").css("display", "block");
+  $('#default_non_show').html("<%= @word.english %>").css("display", "none");
+<% else %>
+  $('#default_show').html("<%= @word.english %>").css("display", "block");
+  $('#default_non_show').html("<%= @word.german %>").css("display", "none");
+<% end %>
 
+// tiny gamification
 <%= session[:count] ||= 0 %>
 <%= session[:count] += 1 %>
 $('#gamification').html("<%= session[:count] %>");
