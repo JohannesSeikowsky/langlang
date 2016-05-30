@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  # methods are self explanatory and defined in the application controller file.
   def login
     if user_exists_and_checks_out?
       log_in
@@ -23,10 +24,10 @@ class UsersController < ApplicationController
     root_with_notice("Logged out.")
   end
 
-  private
 
+  private
   def user_params
-    params.require(:new_user).permit(:email, :password_provided, :current_word)
+    params.require(:new_user).permit(:email, :password_provided)
   end
 
 end

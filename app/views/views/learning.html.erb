@@ -1,21 +1,22 @@
-<!-- header links -->
+<!-- log out -->
 <% if logged_in? %>
   <%= link_to "Log Out", logout_path, class: "pull-right" %> <br>
 <% end %>
 
+<!-- notices -->
 <% if notice %>
   <div class="pull-right"> <%= notice %> </div>
 <% end %>
 
-<!-- central content -->
+<!-- vocabulary -->
 <h2 class="word"> 
-  <span class="gamification"> <%= session[:count] %> </span>
+  <span id="gamification"> <%= session[:count] %> </span>
   <span id="english"> <%= @word.english %> </span> 
   <span id="german"> <%= @word.german %> </span> 
 </h2>
 
-<!-- body of content -->
+<!-- buttons -->
 <div class="buttons">
   <%= link_to "reveal meaning of word", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to "next -->", learning_path(current_word: @word.english), class: "btn btn-lg btn-primary" %>
+  <%= link_to "next -->", learning_path(current_word: @word.english), remote: true, class: "btn btn-lg btn-primary" %>
 </div>

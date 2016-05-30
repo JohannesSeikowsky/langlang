@@ -1,6 +1,6 @@
 class ViewsController < ApplicationController
 
-  before_action :record_words_in_session, only: [:learning]
+  before_action :initialize_sessions, only: [:learning]
 
   def home
     if logged_in?
@@ -11,31 +11,29 @@ class ViewsController < ApplicationController
   end
 
   def learning
-    # logged in?
     if current_user
-      # get word 
+      # if user is logged in:
       @word = Word.get_random
-      # word already in session?
-      if session[:words].include?(@word.english)
-        redirect_to learning_path
-      else
-        # put word in session & continue
+      unless session[:words].include?(@word.english)
+        # normal procedure. 
         session[:words] << @word.english
         session[:count] += 1
-
         respond_to do |format|
           format.html { render "learning" }
           format.js
         end
+      else
+        # if word has already been asked for this sessions - repeat request cycle.
+        redirect_to learning_path
       end
-    # if not logged in
     else
+      # if user is not logged in:
       root_with_notice("please log in.")
     end
   end
 
-
-  def record_words_in_session
+  private
+  def initialize_sessions
     session[:words] ||= []
     session[:count] ||= 0
   end

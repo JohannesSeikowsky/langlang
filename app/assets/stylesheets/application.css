@@ -1,6 +1,5 @@
 /* *= require_self */
 
-
  body{
   margin-top: 15px;
  }
@@ -44,7 +43,7 @@
   margin-left: 20px;
 }
 
-.gamification{
+#gamification{
   font-size: 15px;
   position: relative;
   left: 153px;
