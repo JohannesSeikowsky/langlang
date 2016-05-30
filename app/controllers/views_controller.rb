@@ -15,9 +15,10 @@ class ViewsController < ApplicationController
       # if user is logged in:
       @word = Word.get_random
       unless session[:words].include?(@word.english)
-        # normal procedure. 
+        # count and non-repetition features
         session[:words] << @word.english
         session[:count] += 1
+        # request handling
         respond_to do |format|
           format.html { render "learning" }
           format.js

@@ -1,19 +1,18 @@
 class UsersController < ApplicationController
 
-  # methods are self explanatory and defined in the application controller file.
-  def login
-    if user_exists_and_checks_out?
+  def new_user
+    if save_new_user
       log_in
-      learning_with_notice('Logged in.')
+      learning_with_notice('Account created.')
     else
       root_with_notice('Try again.')
     end
   end
 
-  def new_user
-    if new_user_can_saved?
+  def login
+    if user_exists_and_checks_out?
       log_in
-      learning_with_notice('Account created.')
+      learning_with_notice('Logged in.')
     else
       root_with_notice('Try again.')
     end
