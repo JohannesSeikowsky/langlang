@@ -10,6 +10,10 @@ class ViewsController < ApplicationController
     end
   end
 
+  def languages
+  end
+
+
   def learning
     if current_user
       # if user is logged in:

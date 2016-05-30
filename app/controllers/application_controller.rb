@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, notice: "#{notice}"
   end
 
+  def languages_with_notice(notice)
+    redirect_to languages_path, notice: "#{notice}"
+  end
+
   def learning_with_notice(notice)
     redirect_to learning_path, notice: "#{notice}"
   end
