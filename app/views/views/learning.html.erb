@@ -1,6 +1,6 @@
 <!-- header links -->
 <% if logged_in? %>
-  <%= link_to "Ausloggen", logout_path, class: "pull-right" %> <br>
+  <%= link_to "Log Out", logout_path, class: "pull-right" %> <br>
 <% end %>
 
 <% if notice %>
@@ -9,14 +9,13 @@
 
 <!-- central content -->
 <h2 class="word"> 
+  <span class="gamification"> <%= session[:count] %> </span>
   <span id="english"> <%= @word.english %> </span> 
   <span id="german"> <%= @word.german %> </span> 
 </h2>
 
 <!-- body of content -->
 <div class="buttons">
-  <%= link_to I18n.t('learning.reveal_button'), "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
-  <%= link_to I18n.t('learning.next_button'), learning_path(current_word: @word.english), class: "btn btn-lg btn-primary" %>
+  <%= link_to "reveal meaning of word", "#", onclick: "reveal('german','english');", class: "btn btn-lg btn-success" %>
+  <%= link_to "next -->", learning_path(current_word: @word.english), class: "btn btn-lg btn-primary" %>
 </div>
-
-<%= session[:count] %>

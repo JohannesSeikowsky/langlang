@@ -3,24 +3,24 @@ class UsersController < ApplicationController
   def login
     if user_exists_and_checks_out?
       log_in
-      learning_with_notice('eingelogged.')
+      learning_with_notice('Logged in.')
     else
-      root_with_notice('Versuchen Sie es nochmal.')
+      root_with_notice('Try again.')
     end
   end
 
   def new_user
     if new_user_can_saved?
       log_in
-      learning_with_notice('Account erstellt.')
+      learning_with_notice('Account created.')
     else
-      root_with_notice('Versuchen Sie es nochmal.')
+      root_with_notice('Try again.')
     end
   end
 
   def logout
     log_out
-    root_with_notice("ausgelogged.")
+    root_with_notice("Logged out.")
   end
 
   private
