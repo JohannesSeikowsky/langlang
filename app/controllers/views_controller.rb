@@ -17,7 +17,6 @@ class ViewsController < ApplicationController
       unless session[:words].include?(@word.english)
         # count and non-repetition features
         session[:words] << @word.english
-        session[:count] += 1
         # request handling
         respond_to do |format|
           format.html { render "learning" }
@@ -36,7 +35,6 @@ class ViewsController < ApplicationController
   private
   def initialize_sessions
     session[:words] ||= []
-    session[:count] ||= 0
   end
 
 end

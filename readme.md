@@ -9,7 +9,6 @@ I plan to cut all fluff in an extremist fashion code-wise and interface-wise.
 + no word repetition in session
 + basic ajax
 + basic validations
-+ site text. completed for now.
 + basic I18n
 + tiny gamification feature
 + readme

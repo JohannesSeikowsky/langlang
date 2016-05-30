@@ -1,3 +1,7 @@
 // replace old word with new word && ensure that the english word is at first the visible one.
 $('#english').html("<%= @word.english %>").css("display", "block");
 $('#german').html("<%= @word.german %>").css("display", "none");
+
+<%= session[:count] ||= 0 %>
+<%= session[:count] += 1 %>
+$('#gamification').html("<%= session[:count] %>");
