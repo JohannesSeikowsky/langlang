@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def new_user
     if save_new_user
       log_in
-      languages_with_notice('Account created.')
+      learning_with_notice('Account created.')
     else
       root_with_notice('Try again.')
     end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def login
     if user_exists_and_checks_out?
       log_in
-      languages_with_notice('Logged in.')
+      learning_with_notice('Logged in.')
     else
       root_with_notice('Try again.')
     end

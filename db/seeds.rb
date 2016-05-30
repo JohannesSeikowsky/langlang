@@ -1,15 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-# Word.create!(english: "explain", german: "erklären")
 
 Word.delete_all
 
-vocab_arrow = [["word", "Wort"],
+german_vocab_arrow = [["word", "Wort"],
 ["said", "gesagt"],
 ["there", "da"],
 ["use", "benutzen/nutzen"],
@@ -527,6 +519,8 @@ vocab_arrow = [["word", "Wort"],
 ["art", "die Kunst"],
 ["feeling", "das Gefühl"]]
 
-vocab_arrow.each do |eng, ger|
+
+german_vocab_arrow.each do |eng, ger|
   Word.create(english: eng, german: ger)
 end
+
